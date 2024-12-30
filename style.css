@@ -37,11 +37,12 @@ body {
 .personal-info {
     display: flex;
     flex-wrap: wrap;  /* 允许换行 */
-    gap: 10px;  /* 缩小项之间的间距 */
+    gap: 20px;  /* 缩小项之间的间距 */
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 /* 单个信息项 */
@@ -50,8 +51,9 @@ body {
     flex-direction: column;  /* 每个信息项内，标题和内容垂直排列 */
     justify-content: center;
     align-items: flex-start;
-    width: 30%;  /* 增大每项宽度，占据更大的空间 */
+    width: calc(33.33% - 20px);  /* 调整宽度，确保容器内项的均匀分布 */
     margin: 0;  /* 删除外边距 */
+    box-sizing: border-box; /* 确保宽度包含内边距 */
 }
 
 /* 单个信息项标题 */
