@@ -19,7 +19,7 @@ function showContactInfo() {
     modalContent.style.padding = '20px';
     modalContent.style.borderRadius = '10px';
     modalContent.style.textAlign = 'center';
-    modalContent.style.maxWidth = '80%';
+    modalContent.style.maxWidth = '90%'; // 更好适应小屏设备
     modalContent.style.overflow = 'auto';  // 防止内容溢出
     modalContent.innerHTML = `
         <h2>添加微信联系</h2>
@@ -55,19 +55,17 @@ function printResume() {
 document.addEventListener('DOMContentLoaded', function () {
     // 动态显示每个 section 元素
     const sections = document.querySelectorAll('section');
-    window.addEventListener('scroll', function () {
-        sections.forEach(section => {
-            if (isInViewport(section)) {
-                section.classList.add('animate');
+    
+    // 使用 IntersectionObserver 替代 scroll 监听
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
             }
         });
-    });
+    }, { threshold: 0.5 }); // 当 50% 可见时触发动画
 
-    // 检查元素是否出现在视口内
-    function isInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-    }
+    sections.forEach(section => observer.observe(section));
 });
 
 // 模拟文件路径修正（此部分可根据实际情况修改）
@@ -100,6 +98,22 @@ style.innerHTML = `
     .feedback-button:hover {
         background-color: #3b4e86; /* hover时的稍暗的宝蓝色 */
     }
+
+    .feedback-button:focus,
+    .feedback-button:active {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.6);  /* 添加焦点状态样式 */
+    }
+
+    /* 针对手机端优化 */
+    @media (max-width: 768px) {
+        .modal-content {
+            max-width: 90%;
+        }
+        .feedback-button {
+            padding: 8px 16px;
+        }
+    }
 `;
 document.head.appendChild(style);
 
@@ -125,3 +139,4 @@ createEditButton('work-experience', 'work-experience.html');
 
 // 创建核心能力与技能编辑按钮
 createEditButton('skills', 'skills.html');
+
