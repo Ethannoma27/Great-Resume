@@ -24,7 +24,7 @@ function showContactInfo() {
         <h2>添加微信联系</h2>
         <p>请扫码或添加我的微信号：</p>
         <p><strong>your_wechat_id</strong></p>
-        <img src="path_to_your_qr_code_image.jpg" alt="微信二维码" style="width: 200px; height: 200px; margin: 20px auto; display: block;">
+        <img src="https://raw.githubusercontent.com/ethannoma27/My-Resume-2/main/images/Qrcode.jpg" alt="微信二维码" style="width: 200px; height: 200px; margin: 20px auto; display: block;">
         <button onclick="closeModal()">关闭</button>
     `;
 
@@ -79,3 +79,4 @@ function fixFilePaths() {
 
 // 调用修正路径函数
 fixFilePaths();
+
