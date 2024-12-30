@@ -145,6 +145,19 @@ button:hover {
     background-color: #218838; /* 深绿色 */
 }
 
+/* 编辑页面（如工作经验和核心能力与技能页面） */
+textarea {
+    width: 100%;
+    min-height: 200px;  /* 使用min-height替代固定高度，确保自适应 */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    box-sizing: border-box;
+    resize: none; /* 禁止用户调整大小 */
+}
+
 /* 媒体查询，优化手机端展示 */
 @media screen and (max-width: 768px) {
     body {
@@ -174,7 +187,7 @@ button:hover {
     }
 
     .personal-info-item h2 {
-        font-size: 1rem;  /* 在小屏设备上适当增大标题字体 */
+        font-size: 1.1rem;  /* 在小屏设备上适当增大标题字体 */
     }
 
     .personal-info-item p {
@@ -207,11 +220,4 @@ button:hover {
         top: 20px;
         right: 20px;
     }
-}
-.feedback-button {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    background-color: #1E3A8A !important;
-    z-index: 1000 !important;
 }

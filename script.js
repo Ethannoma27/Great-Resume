@@ -103,3 +103,26 @@ style.innerHTML = `
 `;
 document.head.appendChild(style);
 
+// 新增：工作经验和核心能力与技能的编辑按钮功能
+
+// 为工作经验和核心能力与技能的部分添加按钮，打开新的页面进行编辑
+function createEditButton(sectionId, targetUrl) {
+    const button = document.createElement('button');
+    button.textContent = `编辑${sectionId}`;
+    button.style.marginTop = '20px';
+    button.onclick = function() {
+        window.location.href = targetUrl; // 跳转到编辑页面
+    };
+
+    const section = document.querySelector(`#${sectionId}`);
+    if (section) {
+        section.appendChild(button);
+    }
+}
+
+// 创建工作经验编辑按钮
+createEditButton('work-experience', 'work-experience.html');
+
+// 创建核心能力与技能编辑按钮
+createEditButton('skills', 'skills.html');
+
