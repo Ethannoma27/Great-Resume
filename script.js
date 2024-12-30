@@ -125,4 +125,3 @@ createEditButton('work-experience', 'work-experience.html');
 
 // 创建核心能力与技能编辑按钮
 createEditButton('skills', 'skills.html');
-
