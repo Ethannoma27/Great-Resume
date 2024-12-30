@@ -28,7 +28,7 @@ function showContactInfo() {
         <img src="https://raw.githubusercontent.com/ethannoma27/My-Resume-2/main/images/Qrcode.jpg" 
              alt="微信二维码" 
              style="width: 100%; max-width: 250px; height: auto; margin: 20px auto; display: block;">
-        <button onclick="closeModal()" style="background-color: #1E3A8A; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+        <button onclick="closeModal()" class="feedback-button">
             关闭
         </button>
     `;
@@ -84,4 +84,22 @@ function fixFilePaths() {
 
 // 调用修正路径函数
 fixFilePaths();
+
+// CSS 样式改动
+const style = document.createElement('style');
+style.innerHTML = `
+    .feedback-button {
+        background-color: #1E3A8A !important; /* 宝蓝色 */
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .feedback-button:hover {
+        background-color: #3b4e86; /* hover时的稍暗的宝蓝色 */
+    }
+`;
+document.head.appendChild(style);
 
