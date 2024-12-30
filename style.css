@@ -208,3 +208,10 @@ button:hover {
         right: 20px;
     }
 }
+.feedback-button {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    background-color: #1E3A8A !important;
+    z-index: 1000 !important;
+}
