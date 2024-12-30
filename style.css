@@ -120,19 +120,6 @@ button:hover {
     transform: scale(1.05); /* 放大效果，给用户反馈 */
 }
 
-/* 反馈按钮固定在页面右下角，添加宝蓝色 */
-.feedback-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #1E3A8A !important; /* 宝蓝色 */
-    z-index: 1000;
-}
-
-.feedback-button:hover {
-    background-color: #3b4e86; /* hover时的稍暗的宝蓝色 */
-}
-
 /* 打印按钮样式：固定在页面右上角 */
 .print-button {
     position: fixed;
@@ -145,19 +132,6 @@ button:hover {
 /* 打印按钮鼠标悬停效果 */
 .print-button:hover {
     background-color: #218838; /* 深绿色 */
-}
-
-/* 编辑页面（如工作经验和核心能力与技能页面） */
-textarea {
-    width: 100%;
-    min-height: 200px;  /* 使用min-height替代固定高度，确保自适应 */
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    margin-top: 20px;
-    box-sizing: border-box;
-    resize: none; /* 禁止用户调整大小 */
 }
 
 /* 媒体查询，优化手机端展示 */
@@ -177,49 +151,24 @@ textarea {
     }
 
     .personal-info {
-        width: 100%;  /* 使个人信息块在手机端占满整个宽度 */
-        flex-direction: column;  /* 列方向排列 */
-        align-items: center;  /* 让信息居中 */
-        padding: 15px;
+        width: 100%;  /* 保证个人信息部分占满100%宽度 */
+        flex-direction: column;  /* 列布局，适应小屏幕 */
+        align-items: flex-start;  /* 确保内容左对齐 */
+        padding: 10px;
     }
 
     .personal-info-item {
-        width: 100%;  /* 使每个信息项占满父容器的宽度 */
-        margin-bottom: 10px;  /* 增加每项之间的间距 */
+        width: 100%;  /* 每个信息项占满整个宽度 */
+        margin-bottom: 15px;  /* 每个信息项底部间距 */
     }
 
-    .personal-info-item h2 {
-        font-size: 1.1rem;  /* 在小屏设备上适当增大标题字体 */
-    }
-
-    .personal-info-item p {
-        font-size: 1rem;  /* 增大内容字体 */
-    }
-
-    section {
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-
-    h2 {
-        font-size: 1.25rem;
+    .title {
+        font-size: 2rem; /* 调整标题大小 */
     }
 
     button {
+        width: 100%; /* 按钮在小屏设备上占满宽度 */
+        padding: 15px;
         font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    /* 保证按钮在手机端正确显示 */
-    .feedback-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-    }
-
-    .print-button {
-        position: fixed;
-        top: 20px;
-        right: 20px;
     }
 }
