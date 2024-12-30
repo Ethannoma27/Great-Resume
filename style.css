@@ -1,0 +1,204 @@
+/* 设置全局字体和背景颜色 */
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #b3e5fc); /* 柔和的渐变背景 */
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.8;  /* 调整行高，使阅读更舒适 */
+}
+
+/* 页面容器 */
+.container {
+    width: 80%; /* 设置为百分比，使容器宽度响应式 */
+    max-width: 210mm; /* 设置最大宽度为A4纸的宽度 */
+    min-height: 297mm; /* A4纸高度 */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 10px;  /* 使容器边角圆润 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 加入柔和的阴影 */
+}
+
+/* 页眉和标题 */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+/* 个人信息部分 */
+.personal-info {
+    display: flex;
+    flex-wrap: wrap;  /* 允许换行 */
+    gap: 10px;  /* 缩小项之间的间距 */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 单个信息项 */
+.personal-info-item {
+    display: flex;
+    flex-direction: column;  /* 每个信息项内，标题和内容垂直排列 */
+    justify-content: center;
+    align-items: flex-start;
+    width: 30%;  /* 增大每项宽度，占据更大的空间 */
+    margin: 0;  /* 删除外边距 */
+}
+
+/* 单个信息项标题 */
+.personal-info-item h2 {
+    font-size: 1rem;  /* 控制标题字体大小 */
+    margin: 0;
+    width: 100%;
+    color: #007BFF;
+}
+
+/* 单个信息项内容 */
+.personal-info-item p {
+    font-size: 1rem;  /* 控制内容字体大小 */
+    margin: 5px 0;
+    color: #333;
+}
+
+/* 职业目标、教育背景、工作经验等部分 */
+section {
+    margin-bottom: 30px;
+    padding: 20px;  /* 为每个部分添加内边距 */
+    background-color: #f9f9f9;  /* 轻微的背景色 */
+    border-radius: 8px; /* 圆角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 加入阴影效果 */
+}
+
+section::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #007BFF, #00bcd4); /* 渐变色分割线 */
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #007BFF;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 按钮样式 */
+button {
+    padding: 12px 24px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+/* 鼠标悬停时按钮的颜色和动画效果 */
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* 放大效果，给用户反馈 */
+}
+
+/* 反馈按钮固定在页面右下角 */
+button:nth-of-type(1) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722;
+}
+
+/* 打印按钮样式：固定在页面右上角 */
+button:nth-of-type(2) {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;  /* 绿色背景 */
+    z-index: 1000;
+}
+
+/* 打印按钮鼠标悬停效果 */
+button:nth-of-type(2):hover {
+    background-color: #218838; /* 深绿色 */
+}
+
+/* 媒体查询，优化手机端展示 */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .personal-info {
+        width: 100%;  /* 使个人信息块在手机端占满整个宽度 */
+        flex-direction: column;  /* 列方向排列 */
+        align-items: center;  /* 让信息居中 */
+        padding: 15px;
+    }
+
+    .personal-info-item {
+        width: 100%;  /* 使每个信息项占满父容器的宽度 */
+        margin-bottom: 10px;  /* 增加每项之间的间距 */
+    }
+
+    .personal-info-item h2 {
+        font-size: 1rem;  /* 在小屏设备上适当增大标题字体 */
+    }
+
+    .personal-info-item p {
+        font-size: 1rem;  /* 增大内容字体 */
+    }
+
+    section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    button:nth-of-type(1) {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    button:nth-of-type(2) {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+    }
+}
