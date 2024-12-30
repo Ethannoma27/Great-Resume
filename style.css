@@ -102,7 +102,7 @@ p {
 /* 按钮样式 */
 button {
     padding: 12px 24px;
-    background-color: #007BFF;
+    background-color: #007BFF; /* 默认按钮颜色 */
     color: white;
     border: none;
     border-radius: 8px;
@@ -118,16 +118,21 @@ button:hover {
     transform: scale(1.05); /* 放大效果，给用户反馈 */
 }
 
-/* 反馈按钮固定在页面右下角 */
-button:nth-of-type(1) {
+/* 反馈按钮固定在页面右下角，添加宝蓝色 */
+.feedback-button {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #ff5722;
+    background-color: #1E3A8A !important; /* 宝蓝色 */
+    z-index: 1000;
+}
+
+.feedback-button:hover {
+    background-color: #3b4e86; /* hover时的稍暗的宝蓝色 */
 }
 
 /* 打印按钮样式：固定在页面右上角 */
-button:nth-of-type(2) {
+.print-button {
     position: fixed;
     top: 20px;
     right: 20px;
@@ -136,7 +141,7 @@ button:nth-of-type(2) {
 }
 
 /* 打印按钮鼠标悬停效果 */
-button:nth-of-type(2):hover {
+.print-button:hover {
     background-color: #218838; /* 深绿色 */
 }
 
@@ -190,13 +195,14 @@ button:nth-of-type(2):hover {
         padding: 10px 20px;
     }
 
-    button:nth-of-type(1) {
+    /* 保证按钮在手机端正确显示 */
+    .feedback-button {
         position: fixed;
         bottom: 20px;
         right: 20px;
     }
 
-    button:nth-of-type(2) {
+    .print-button {
         position: fixed;
         top: 20px;
         right: 20px;
