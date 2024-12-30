@@ -20,12 +20,17 @@ function showContactInfo() {
     modalContent.style.borderRadius = '10px';
     modalContent.style.textAlign = 'center';
     modalContent.style.maxWidth = '80%';
+    modalContent.style.overflow = 'auto';  // 防止内容溢出
     modalContent.innerHTML = `
         <h2>添加微信联系</h2>
         <p>请扫码或添加我的微信号：</p>
         <p><strong>your_wechat_id</strong></p>
-        <img src="https://raw.githubusercontent.com/ethannoma27/My-Resume-2/main/images/Qrcode.jpg" alt="微信二维码" style="width: 200px; height: 200px; margin: 20px auto; display: block;">
-        <button onclick="closeModal()">关闭</button>
+        <img src="https://raw.githubusercontent.com/ethannoma27/My-Resume-2/main/images/Qrcode.jpg" 
+             alt="微信二维码" 
+             style="width: 100%; max-width: 250px; height: auto; margin: 20px auto; display: block;">
+        <button onclick="closeModal()" style="background-color: #1E3A8A; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">
+            关闭
+        </button>
     `;
 
     modal.appendChild(modalContent);
